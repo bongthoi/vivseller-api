@@ -44,7 +44,7 @@ router.get(api_config.api_url+namespace_config.namespace+".products",async(req,r
     }
 });
 
-router.get(api_config.api_url+namespace_config.namespace+".getByCategory/:categoryID",async (req,res)=>{
+router.get(api_config.api_url+namespace_config.namespace+".product.getByCategory/:categoryID",async (req,res)=>{
     try {
         let products=await productService.getByCategoryID(req.params.categoryID);
         res.json(products);
@@ -54,7 +54,7 @@ router.get(api_config.api_url+namespace_config.namespace+".getByCategory/:catego
 
 });
 
-router.get(api_config.api_url+namespace_config.namespace+".getBySellerID/:SellerID",async (req,res)=>{
+router.get(api_config.api_url+namespace_config.namespace+".product.getBySellerID/:SellerID",async (req,res)=>{
     try {
         let products=await productService.getBySellerID(req.params.SellerID);
         res.json(products);
@@ -64,7 +64,7 @@ router.get(api_config.api_url+namespace_config.namespace+".getBySellerID/:Seller
 
 });
 
-router.get(api_config.api_url+namespace_config.namespace+".productDetail/:productID",async (req,res)=>{
+router.get(api_config.api_url+namespace_config.namespace+".product.productDetail/:productID",async (req,res)=>{
     try {
         let product=await productService.getByID(req.params.productID);
         res.json(product);
