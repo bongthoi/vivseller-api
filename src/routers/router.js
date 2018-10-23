@@ -1,6 +1,4 @@
 'use strict';
-
-/** */
 import express from 'express';
 import api_config from '../../config/api_config.json';
 import namespace_config from '../../config/namespace_config.json';
