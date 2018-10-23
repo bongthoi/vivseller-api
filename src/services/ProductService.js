@@ -5,7 +5,21 @@ var productRepo = new ProductRepo();
 
 class ProductService {
     constructor() { };
-    getAll() { };
+
+    async getAll() {
+        const method="ProductService/getAll()";
+        console.log(method+" -->start");
+
+        try {
+            let result=await productRepo.getAll();
+            console.log(method+" -->success");
+            return result;
+        } catch (error) {
+            console.log(method+" -->fail");
+            return new Error(error);
+        }
+    };
+
     async getByID(_productID) {
         const method = "ProductService/getByID()";
         console.log(method + " -->start");
@@ -19,7 +33,20 @@ class ProductService {
             return new Error(error);
         }
     };
-    getByCategoryID(_categoryID) { };
+
+    async getByCategoryID(_categoryID) { 
+        const method = "ProductRepo/getBySellerID()";
+        console.log(method + " -->start");
+
+        try {
+            let result = await productRepo.getByCategoryID(_categoryID);
+            console.log(method + " -->success");
+            return result;
+        } catch (error) {
+            console.log(method + " -->fail");
+            return new Error(error);
+        }
+    };
 
     async getBySellerID(_sellerID) {
         const method = "ProductRepo/getBySellerID()";

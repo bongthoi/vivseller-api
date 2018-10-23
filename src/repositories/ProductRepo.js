@@ -2,7 +2,23 @@ import mysqldb_connection from '../utilities/mysqldb_connection';
 
 class ProductRepo {
     constructor() { };
-    getAll() { };
+    getAll() { 
+        let method="ProductRepo/getAll()";
+        console.log(method + " -->start");
+
+        return new Promise((resolve,reject)=>{
+            mysqldb_connection.query("SELECT * FROM tb_product",(error,result)=>{
+                if(error){
+                    console.log(method+" -->fail");
+                    return reject(error+"");
+                }else{
+                    console.log(method+ " -->success");
+                    return resolve(result);
+                }
+            });
+        });
+    };
+
     getByID(_productID) { 
         const method="ProductRepo/getByID()";
         console.log(method+" -->start");
@@ -20,7 +36,23 @@ class ProductRepo {
         });
     };
     
-    getByCategoryID(_categoryID) { };
+    getByCategoryID(_categoryID) {
+        let method="ProductRepo/getByCategoryID()";
+        console.log(method + " -->start");
+
+        return new Promise((resolve,reject)=>{
+            mysqldb_connection.query("SELECT * FROM tb_product WHERE categoryID=?",[_categoryID],(error,result)=>{
+                if(error){
+                    console.log(method+" -->fail");
+                    return reject(error+"");
+                }else{
+                    console.log(method+ " -->success");
+                    return resolve(result);
+                }
+            });
+        });
+    };
+    
     getBySellerID(_sellerID) { 
         let method="ProductRepo/getBySellerID()";
         console.log(method+" -->start");
