@@ -1,19 +1,24 @@
 {
-    "apps": [
+  "apps": [
+      {
+          "name" : "vivseller",
+          "script": "npm -- start",
+          "cwd" : "/home/user/Apps/vivseller"
+        },
+{
+          "name" : "vivbuyer",
+          "script": "npm -- start",
+          "cwd" : "/home/user/Apps/vivbuyer"
+        },
         {
-            "name" : "vivseller",
-            "script": "npm -- start",
-            "cwd" : "/home/user/vivseller"
-          },
-          {
-            "name" : "hypernodejs-app",
-            "script": "npm -- start",
-            "cwd" : "/home/user/hypernodejs-app"
-          },
-          {
-            "name" : "vivseller-api",
-            "script": "npm -- start",
-            "cwd" : "/home/user/vivseller-api"
-          }
-    ]
-  }
+          "name" : "hypernodejs-app",
+          "script": "npm -- start",
+          "cwd" : "/home/user/Apps/hypernodejs-app"
+        },
+{
+          "name" : "vivseller-api",
+          "script": "npm -- start",
+          "cwd" : "/home/user/Apps/vivseller-api"
+        }
+  ]
+}
