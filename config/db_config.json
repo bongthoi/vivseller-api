@@ -1,7 +1,7 @@
 {
-    "host":"localhost",
+    "host":"103.77.169.245",
     "port":3306,
-    "database_name":"vivapi",
-    "user":"root",
-    "password":"123456"
+    "database_name":"vivbuyerseller",
+    "user":"mysql245",
+    "password":"mysql245@glorious"
 }
